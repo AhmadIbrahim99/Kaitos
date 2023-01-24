@@ -1,0 +1,55 @@
+﻿@model ContactUsCreateVM;
+<div class="col-xl-8">
+          <div class="contact-form-wrapper">
+            <div class="row">
+              <div class="col-xl-10 col-lg-8 mx-auto">
+                <div class="section-title text-center">
+                  <span> Get in Touch </span>
+                  <h2>
+                    Ready to Get Started
+                  </h2>
+                  <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus
+                    quiblanditiis praesentium
+                  </p>
+                </div>
+              </div>
+            </div>
+            <form asp-action="Create" asp-controller="ContactUs" class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input asp-for="@Model.Name" type="text" name="name" id="name" placeholder="Name" required />
+                  <span asp-validation-for="@Model.Name" class="text-danger"></span>
+              </div>
+                <div class="col-md-6">
+                  <input asp-for="@Model.Email" type="email" name="email" id="email" placeholder="Email" required />
+                  <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input asp-for="@Model.Phone" type="text" name="phone" id="phone" placeholder="Phone" required />
+                  <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                  <input asp-for="@Model.Subject" type="text" name="subject" id="email" placeholder="Subject" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <textarea required asp-for="@Model.Message" name="message" id="message" placeholder="Type Message" rows="5"></textarea>
+                  <span asp-validation-for="@Model.Message" class="text-danger"></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="button text-center rounded-buttons">
+                    <button type="submit" class="btn primary-btn rounded-full">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>

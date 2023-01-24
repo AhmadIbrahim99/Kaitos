@@ -1,0 +1,48 @@
+﻿@model List<AboutUs>
+@{
+    ViewData["Title"] = "AboutUs Page";
+}
+
+
+<div class="pt-5">
+    <div class="row py-3">
+        <div class="col-6">
+        <a class="btn btn-success" asp-action="Create">Create</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>OurHistory</th>
+                    <th>OurVision</th>
+                    <th>Image</th>
+                    <th>CreatedAt</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Title</td>
+                        <td>@item.OurHistory</td>
+                        <td>@item.OurVision</td>
+                            <td><img class="rounded-circle" src="~/ProjectImages/Thumbs/Med/@item.Iamge"/></td>
+                        <td>@item.CreatedAt</td>
+                        <td>
+                                <a asp-route-id="@item.Id" asp-action="Delete" class="btn btn-danger">Delete</a>
+                                <span> | </span>
+                                <a asp-route-id="@item.Id" asp-action="Update" class="btn btn-primary">Update</a>
+                            </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>

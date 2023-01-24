@@ -1,0 +1,42 @@
+﻿@model List<ContactUs>
+@{
+    ViewData["Title"] = "ContactUs Page";
+}
+
+<div class="pt-5">
+    <div class="row justify-content-center">
+    <div class="col-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Subject</td>
+                        <td>@item.Message</td>
+                        <td>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                <span> | </span>
+                                <button type="button" class="btn btn-primary">Update</button>
+                            </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
