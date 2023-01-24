@@ -22,11 +22,11 @@ namespace Kaitos.Controllers
         [HttpPost]
         public override async Task<IActionResult> Create(ContactUsCreateVM entity)
         {
-            if (!ModelState.IsValid) return Redirect("/Home");
+            if (!ModelState.IsValid) return Redirect("/Home/Index");
 
             await _repository.CreateAsync(_mapper.Map<ContactUs>(entity));
 
-            return Redirect("/Home");
+            return Redirect("/Home/Index");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Kaitos.Admin.Controllers.Repository
 
         [HttpGet]
 
-        public virtual async Task<IActionResult> Update(uint id)
+        public virtual async Task<IActionResult> Update(int id)
             => View(await _repository.GetByIdAsync(id));
         
         [HttpPost]
@@ -48,8 +48,8 @@ namespace Kaitos.Admin.Controllers.Repository
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public virtual async Task<IActionResult> Delete(uint id)
+        [HttpGet("{id}")]
+        public virtual async Task<IActionResult> Delete(int id)
         {
             await _repository.DeleteAsync(id);
             return RedirectToAction(nameof(Index));

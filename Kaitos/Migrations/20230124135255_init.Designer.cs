@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kaitos.Migrations
 {
     [DbContext(typeof(KatiosDbContext))]
-    [Migration("20230124105111_init")]
+    [Migration("20230124135255_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

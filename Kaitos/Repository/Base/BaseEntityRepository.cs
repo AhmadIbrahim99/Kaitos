@@ -23,7 +23,7 @@ namespace Kaitos.Repository.Base
             return entity;
         }
 
-        public virtual async Task DeleteAsync(uint id)
+        public virtual async Task DeleteAsync(int id)
         {
             var result = await _db.FirstOrDefaultAsync(e => e.Id == id)
                 ?? throw new Exception("UnDefined");
@@ -56,7 +56,7 @@ namespace Kaitos.Repository.Base
 
 
         public virtual async Task<T> GetByIdAsync
-            (uint id, string? includes = null, bool tracking = false)
+            (int id, string? includes = null, bool tracking = false)
         {
             var result = _db.AsQueryable<T>();
             if (!tracking) result = result.AsNoTracking();
