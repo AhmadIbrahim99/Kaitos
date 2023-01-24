@@ -1,0 +1,37 @@
+﻿@model MainPart
+@{
+    ViewData["Title"] = "MainPart Page";
+}
+<div class="pt-5">
+    <div class="row py-3 justify-content-center">
+        <div class="col-10">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="Title" class="form-label" ></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="Description" class="form-label" ></label>
+                        <textarea asp-for="Description" class="form-control" ></textarea>
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="Image " class="form-label" ></label>
+                        <input type="file" asp-for="Image"/>
+                        <span class="text-danger" asp-validation-for="Image"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="Vedio" class="form-label" ></label>
+                        <input asp-for="Vedio" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Vedio"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Create</button>
+            </form>
+        </div> 
+    </div>  
+</div>

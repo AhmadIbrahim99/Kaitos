@@ -1,0 +1,49 @@
+﻿@model AboutUsUpdateVm
+@{
+    ViewData["Title"] = "AboutUs Page";
+}
+<div class="pt-5">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <form asp-action="Update" enctype="multipart/form-data">
+                <input disabled asp-for="Id"/>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="Title" class="form-label" ></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="OurHistory" class="form-label" ></label>
+                        <textarea asp-for="OurHistory" class="form-control" ></textarea>
+                        <span asp-validation-for="OurHistory"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="OurVision" class="form-label" ></label>
+                        <textarea asp-for="OurVision" class="form-control" ></textarea>
+                        <span asp-validation-for="OurVision"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="WhoWeAre" class="form-label" ></label>
+                        <textarea asp-for="WhoWeAre" class="form-control" ></textarea>
+                        <span asp-validation-for="WhoWeAre"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="ImageFile " class="form-label" ></label>
+                        <input asp-for="ImageFile " class="form-control" />
+                        <span asp-validation-for="ImageFile"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <img class="rounded-circle" src="~/ProjectImages/@Model.Iamge"/>
+                        <input hidden asp-for="Iamge"/>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div> 
+    </div>  
+</div>

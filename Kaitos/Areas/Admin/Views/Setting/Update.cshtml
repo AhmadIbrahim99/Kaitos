@@ -1,0 +1,43 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Setting Page";
+}
+<div class="pt-5">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <form asp-action="Update" enctype="multipart/form-data">
+                <input disabled asp-for="Id"/>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="Title" class="form-label" ></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="SubTitle" class="form-label" ></label>
+                        <textarea asp-for="SubTitle" class="form-control" ></textarea>
+                        <span asp-validation-for="SubTitle"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="Address" class="form-label" ></label>
+                        <textarea asp-for="Address" class="form-control" ></textarea>
+                        <span asp-validation-for="Address"></span>
+                    </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="ICON " class="form-label" ></label>
+                        <input asp-for="ICON " class="form-control" />
+                        <span asp-validation-for="ICON"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <img class="rounded-circle" src="~/ProjectImages/@Model.ICON"/>
+                        <input hidden asp-for="ICON"/>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div> 
+    </div>  
+</div>

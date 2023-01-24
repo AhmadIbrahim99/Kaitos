@@ -1,0 +1,44 @@
+﻿@model AboutUsCreateVm
+@{
+    ViewData["Title"] = "AboutUs Page";
+}
+<div class="pt-5">
+    <div class="row py-3 justify-content-center">
+        <div class="col-10">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="Title" class="form-label" ></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="OurHistory" class="form-label" ></label>
+                        <textarea asp-for="OurHistory" class="form-control" ></textarea>
+                        <span class="text-danger" asp-validation-for="OurHistory"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="OurVision" class="form-label" ></label>
+                        <textarea asp-for="OurVision" class="form-control" ></textarea>
+                        <span class="text-danger" asp-validation-for="OurVision"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="WhoWeAre" class="form-label" ></label>
+                        <textarea asp-for="WhoWeAre" class="form-control" ></textarea>
+                        <span class="text-danger" asp-validation-for="WhoWeAre"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="ImageFile " class="form-label" ></label>
+                        <input type="file" asp-for="ImageFile"/>
+                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Create</button>
+            </form>
+        </div> 
+    </div>  
+</div>
