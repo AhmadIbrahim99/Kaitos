@@ -6,7 +6,7 @@ namespace Kaitos.ViewModels.AboutUsVM
     {
         public int Id { get; set; }
         public string? Iamge { get; set; }
-        public FormFile ImageFile { get; set; } = null!;
+        public IFormFile? ImageFile { get; set; } = null;
         public string OurHistory { get; set; } = null!;
         public string OurVision { get; set; } = null!;
         public string WhoWeAre { get; set; } = null!;

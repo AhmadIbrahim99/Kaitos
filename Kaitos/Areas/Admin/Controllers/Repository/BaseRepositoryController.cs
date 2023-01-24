@@ -24,7 +24,7 @@ namespace Kaitos.Admin.Controllers.Repository
         [HttpGet]
 
         public virtual async Task<IActionResult> Update(int id)
-            => View(await _repository.GetByIdAsync(id));
+            => View(_mapper.Map<TUpdate>(await _repository.GetByIdAsync(id)));
         
         [HttpPost]
         public virtual async Task<IActionResult> Update(TUpdate entity)
@@ -48,7 +48,7 @@ namespace Kaitos.Admin.Controllers.Repository
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public virtual async Task<IActionResult> Delete(int id)
         {
             await _repository.DeleteAsync(id);

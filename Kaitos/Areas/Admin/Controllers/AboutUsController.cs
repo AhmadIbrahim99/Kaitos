@@ -32,5 +32,18 @@ namespace Kaitos.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpPost]
+        public override async Task<IActionResult> Update(AboutUsUpdateVm entity)
+        {
+            if (!ModelState.IsValid) return View(entity);
+
+            if (entity.ImageFile != null)
+                entity.Iamge = await _service.UploadImageAsync(entity.ImageFile);
+
+            await _repository.UpdateAsync(_mapper.Map<AboutUs>(entity));
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
